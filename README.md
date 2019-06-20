@@ -14,5 +14,5 @@ some sports news.
 - CricApi
 - NewsApi
 
-##Authors
+### Authors
 _Aman Kumar_
