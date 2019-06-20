@@ -1,0 +1,19 @@
+{
+  "name": "red",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cricapi": "^1.2.9",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "newsapi": "^2.4.0",
+    "nodemon": "^1.19.1",
+    "request": "^2.88.0"
+  }
+}

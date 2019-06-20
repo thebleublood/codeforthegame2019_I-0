@@ -1,0 +1,115 @@
+html, body{
+    padding:0px;
+    margin:0px;
+    font-family: 'Raleway', sans-serif;
+    color:#FFF;
+    height:100%;
+ }
+ body{
+    background:rgba(0, 0, 0, 0.5); 
+    background: -webkit-linear-gradient(#e96443 0, #904e95 100%);
+    background: -moz-linear-gradient(#e96443 0, #904e95 100%);
+    background: -ms-linear-gradient(#e96443 0, #904e95 100%);
+    background: -o-linear-gradient(#e96443 0, #904e95 100%);
+    background: linear-gradient(#e96443 0, #904e95 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+ }
+ 
+ .contain{
+    width:200px;
+    height: 100%;
+    background:rgba(0, 0, 0, 0.75);
+    margin:0px;
+    padding:10px 0px 20px 0px;
+    border:1px solid #111;
+    border-radius:0px;
+    box-shadow:0px 4px 5px rgba(0, 0, 0, 1);
+    
+    position: fixed;
+    
+ }
+ .link{
+    font-size:16px;
+    font-weight:300;
+    text-align:center;
+    position:relative;
+    height:40px;
+    line-height:40px;
+    margin-top:10px;
+    overflow:hidden;
+    width:90%;
+    margin-left:5%;
+    cursor:pointer;
+ }
+ .link:after{
+    content: '';
+    position:absolute;
+    width:80%;
+    border-bottom:1px solid rgba(255, 255, 255, 0.5);
+    bottom:50%;
+    left:-100%;
+    transition-delay: all 0.5s;
+    transition: all 0.5s;
+ }
+ .link:hover:after,
+ .link.hover:after{
+    left:100%;
+ }
+ .link .text{
+    text-shadow:0px -40px 0px rgba(255, 255, 255, 1);
+    transition:all 0.75s;
+    transform:translateY(100%) translateZ(0);
+    transition-delay:all 0.25s;
+ }
+ .link:hover .text,
+ .link.hover .text{
+    text-shadow:0px -40px 0px rgba(255, 255, 255, 0);
+    transform:translateY(0%) translateZ(0) scale(1.1);
+    font-weight:600;
+ }
+ .icon-wrapper {
+   width: 50px;
+   height: 50px;
+   background: orange;
+   padding: 0.5em;
+   margin: 1em auto;
+   border-radius: 50%;
+   overflow: hidden;
+ }
+ 
+ h1 {
+   text-align: center;
+ }
+ 
+ .cls-1 {
+   fill: #fff;
+ }
+ 
+ .cls-2,
+ .cls-3 {
+   fill: none;
+   stroke: #fff;
+   stroke-miterlimit: 22.93;
+ }
+ 
+ .cls-2 {
+   stroke-width: 2px;
+ }
+ 
+ .icon-wrapper #bat {
+   transform-origin: bottom left;
+   transform: rotate(0) translate3d(0,0,0) scale(.9) rotateX(0deg);
+   transition: all .5s cubic-bezier(0.56, -1, 0.55, 1.5);
+ }
+ .icon-wrapper:hover #bat {
+   transform: rotate(30deg) scale(.75) rotateX(-10deg);
+ }
+ .icon-wrapper #ball {
+   transform: translate(0px, 0px);
+   transition: 500ms all ease-out .35s;
+ }
+ .icon-wrapper:hover #ball {
+   transform: translate(33px,50px);
+ }
+ 
