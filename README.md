@@ -9,6 +9,7 @@ news related to the sports in a pleasant way.
 - Node.js
 - Vanilla JS
 - Express
+- EJS
 - Request
 - CricApi
 - NewsApi
