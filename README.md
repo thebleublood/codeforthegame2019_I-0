@@ -14,5 +14,17 @@ some sports news.
 - CricApi
 - NewsApi
 
+## Milestones
+
+- [ ] Homepage
+- [x] Upcoming Matches
+- [x] Leaderboard	
+- [x] News
+- [ ] About
+- [ ] Sign Up
+- [ ] Favourite
+- [ ] Stats
+- [ ] Quiz
+
 ### Authors
 _Aman Kumar_
