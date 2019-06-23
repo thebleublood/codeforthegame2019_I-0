@@ -5,6 +5,9 @@ app.set("view engine", "ejs");
 
 app.use(express.static(__dirname + '/public'));
 
+app.set('port', (process.env.PORT || 8000));
+
+
 var cricapi = require("cricapi");
 
 cricapi.setAPIKey("lgtEZ6vTfiQ3ToDh3bznIPJxToM2");
