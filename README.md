@@ -18,12 +18,14 @@ some sports news.
 
 - Clone it 
     ```$ git clone https://github.com/thebleublood/codeforthegame2019_anonymous.git ```
-
+- Open the folder
+    ```$  cd .\codeforthegame2019_anonymous\ ```
 - Install Dependecies
     ```$ npm install ```
-
 - Run it
     ```$ node app.js ```
+- Open in your browser
+    ```$ localhost:8000 ``` 
 
 ## Milestones
 
