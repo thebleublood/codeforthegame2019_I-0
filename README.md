@@ -14,6 +14,17 @@ some sports news.
 - CricApi
 - NewsApi
 
+## To run locally
+
+- Clone it 
+    ```$ git clone https://github.com/thebleublood/codeforthegame2019_anonymous.git ```
+
+- Install Dependecies
+    ```$ npm install ```
+
+- Run it
+    ```$ node app.js ```
+
 ## Milestones
 
 - [ ] Homepage
