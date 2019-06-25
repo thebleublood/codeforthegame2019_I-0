@@ -29,7 +29,7 @@ some sports news.
 - Run it
     ```$ node app.js ```
 - Open in your browser
-    ```$ localhost:8000 ``` 
+    ``` localhost:8000 ``` 
 
 ## Milestones
 
