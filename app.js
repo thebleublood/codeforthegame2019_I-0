@@ -24,19 +24,51 @@ app.get("/leaderboard",function(req,res){
 
 });
 
-
-var cricapi = require("cricapi");
-
-cricapi.setAPIKey("lgtEZ6vTfiQ3ToDh3bznIPJxToM2");
-
-app.get("/matches", function(req,res){
-    cricapi.matches(function(error, databundle){ 
-        var data = JSON.parse(databundle) 
-         //console.log(data);
-         res.render("matches", {data:data});
+app.get("/live",function(req,res){
     
+    var query = req.query.search;
+    var url   = "https://dev132-cricket-live-scores-v1.p.rapidapi.com/scorecards.php?seriesid=2181&matchid=" + query;
+   
+    unirest.get(url)
+    .header("X-RapidAPI-Host", "dev132-cricket-live-scores-v1.p.rapidapi.com")
+    .header("X-RapidAPI-Key", "0e8fa337camsh8b1db3ec644c942p1568e6jsn4b3c9392a451")
+    .end(function (result) {
+      //console.log(result.status, result.headers, result.body);
+       data = result.body;
+    //    console.log(req.query.search);
+        
+        res.render("live", {data:data});
     });
-})
+
+});
+
+
+app.get("/matches",function(req,res){
+    unirest.get("https://dev132-cricket-live-scores-v1.p.rapidapi.com/matches.php?completedlimit=100&inprogresslimit=100&upcomingLimit=100")
+    .header("X-RapidAPI-Host", "dev132-cricket-live-scores-v1.p.rapidapi.com")
+    .header("X-RapidAPI-Key", "0e8fa337camsh8b1db3ec644c942p1568e6jsn4b3c9392a451")
+    .end(function (result) {
+      //console.log(result.status, result.headers, result.body);
+       data = result.body
+        res.render("matches", {data:data});
+    });
+
+});
+
+
+
+// var cricapi = require("cricapi");
+
+// cricapi.setAPIKey("lgtEZ6vTfiQ3ToDh3bznIPJxToM2");
+
+// app.get("/matches", function(req,res){
+//     cricapi.matches(function(error, databundle){ 
+//         var data = JSON.parse(databundle) 
+//          //console.log(data);
+//          res.render("matches", {data:data});
+    
+//     });
+// })
 
 
 const NewsAPI = require('newsapi');

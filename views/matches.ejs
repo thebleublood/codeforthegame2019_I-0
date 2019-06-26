@@ -47,19 +47,41 @@
       </div>
 
       <div class="fixedforever">
-          <% data.matches.forEach(match => { %>   
-            <%  if(match.type=='ODI' && match["team-1"]!='Netherlands' && match["team-1"]!='KwaZulu-Natal Academy XI') { %>
+          <% data.matchList.matches.forEach(match => { %>   
+            <%  if(match.series.id=='2181' ) { %>
             <div class="card grid-container">
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSqt-cPOEFc0sPqhVpskpAQtfvlJBTgFwDd2D9Og-_l8oC6I-ukw" alt="Avatar" style="width:120px; height:126px;" >
               <div class="container">
-                <% var one = match["team-1"];  var two = match["team-2"]  %>
-                <h4 class="matchTitle"><b><span><img src="flags/<%=match["team-1"]%>.png" style="width:50px; height:30px; border-radius:25%; margin: 0 30px; "></span><%=  match["team-1"] %> vs <%=  match["team-2"] %></b><img src="flags/<%=match["team-2"]%>.png" style="width:50px; height:30px;border-radius: 25%; margin: 0 30px; "></span></h4> 
+              
+                <h4 class="matchTitle"><b><span>
+                  <img src="<%=match.homeTeam.logoUrl%>"" style="width:50px; height:30px; border-radius:25%; margin: 0 30px; "></span><%=  match.homeTeam.shortName %> vs <%=  match.awayTeam.shortName %></b><img src="<%=match.awayTeam.logoUrl%>" style="width:50px; height:30px;border-radius: 25%; margin: 0 30px; ">
+                  <%  if(match.currentMatchState!="UPCOMING"){  %>
+                    <% if(match.currentMatchState=='Live'){ %>
+                          <form action ="/live" method="GET" style="display: inline; ">
+                            <input type = "text" value="<%=match.id%>" name="search" style="visibility:hidden; height:0px; width: 0px;">
+                           
+                            <input type="submit" value="Go Live!" class="hover-button">
+  
+                          </form>
+                      <%  } else{  %>
+                        <form action ="/live" method="GET" value="<%=match.id%>" style="display: inline;">
+                          <input type = "text" value="<%=match.id%>" name="search" style="visibility:hidden; height:0px; width: 0px;">
+  
+                          <input type="submit" value="View Stats" class="hover-button">
+  
+                        </form>
+                      
+                        <%  }  %>
+  
+                  <%  }  %>
+                </span></h4> 
+                
                 <p style="text-align: center">
-                  <% if (match["winner_team"]!=null){ %>
-                  <%=match["winner_team"]%> won
-                  <% } else {%>
-                    N/A
-                  <% } %>
+                 
+                 
+                        <%= match.currentMatchState %>     
+                     
+                 
                 </p> 
               </div>
              </div>

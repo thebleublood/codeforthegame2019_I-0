@@ -14,11 +14,12 @@
   
   .table-row {
     display: flex;
-    width: 100%;
+    width: 1000px;
+    margin-left: -125px;
     padding: 8px 0;
   }
   .table-row:nth-of-type(odd) {
-    background: lightcoral;
+    background: #111;
   }
   
   .table-data, .header__item {
@@ -53,6 +54,59 @@
   .filter__link.asc::after {
     content: '(asc)';
   }
+
+  
+  .rolldown-list {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .rolldown-list li {
+    padding: 5px;
+    margin-bottom: .125em;
+    display: block;
+    list-style: none;
+  
+  }
+  
+  .rolldown-list li {
+    visibility: hidden;
+    animation: rolldown .3s 1;
+    transform-origin: 50% 0;
+    animation-fill-mode: forwards;
+  }
+  
+  /* .rolldown-list li:nth-child(2n) {
+    background-color: #222;
+  }
+  
+  .rolldown-list li:nth-child(2n+1) {
+    background-color: #111 ;
+  } */
+  
+  #myList {
+    position: absolute;
+    width: 50%; 
+    left: 50%;
+    margin-left: -25%;
+  }
+  
+
+  @keyframes rolldown {
+    0% {
+      visibility: visible;
+      transform: rotateX(180deg) perspective(500px);
+    }
+    70% {
+      visibility: visible;
+      transform: rotateX(-20deg);
+    }
+    100% {
+      visibility: visible;
+      transform: rotateX(0deg);
+    }
+  }
   
   .contain-table{
     max-width: 1000px;
@@ -61,7 +115,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    /* min-height: 100vh; */
   }
 
   .heading{
