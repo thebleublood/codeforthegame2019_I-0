@@ -11,6 +11,7 @@ app.use(express.static(__dirname + '/public'));
 var http = require('http');
 var server = http.Server(app);
 
+app.use(express.static('client'));
 
 server.listen(PORT, ()=>{
     console.log("listening on port 8000");
