@@ -1,4 +1,4 @@
-var PORT = process.env.PORT || 8000;
+var port = process.env.PORT || 8000;
 var express = require("express");
 var app     = express();
 var unirest = require('unirest');
@@ -11,9 +11,7 @@ app.use(express.static(__dirname + '/public'));
 var http = require('http');
 var server = http.Server(app);
 
-app.use(express.static('client'));
-
-server.listen(PORT, ()=>{
+app.listen(port, ()=>{
     console.log("listening on port 8000");
 })
 
