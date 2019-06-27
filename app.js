@@ -6,7 +6,10 @@ app.set("view engine", "ejs");
 
 app.use(express.static(__dirname + '/public'));
 
-app.set('port', (process.env.PORT || 8000));
+// app.set('port', (process.env.PORT || 8000));
+var PORT = process.env.PORT || 8000;
+var http = require('http');
+var server = http.Server(app);
 
 app.get("/", function(req, res){
     res.render("home");    
@@ -100,7 +103,7 @@ app.get("/about", function(req, res){
 })
 
 
-app.listen(port, ()=>{
+server.listen(PORT, ()=>{
     console.log("listening on port 8000");
 })
 
