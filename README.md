@@ -6,7 +6,7 @@ LIVE score with all the player's stats,
 results, team rankings, upcoming matches of ICC Cricket World Cup 2019 alongwith live sports news in the very own theme of ICC 2019 just right at your fingertip, 
 and many more to come. 
 
-###BleedBlue
+####BleedBlue
 
 ## Built With
 
@@ -17,7 +17,11 @@ and many more to come.
 - Vanilla JS
 - CricApi
 - NewsApi
+- RapidApi
+- MongoDB Atlas
+- SVG
 
+ 
 ## To run locally
 - Download node.js framework from
     ``` https://nodejs.org/dist/v10.16.0/node-v10.16.0-x64.msi ```
@@ -35,16 +39,20 @@ and many more to come.
 - Open in your browser
     ``` localhost:8000 ``` 
 
+## To run on heroku server
+
+Go to: http://cricmaniac.herokuapp.com
+
 ## Milestones
 
-- [ ] Homepage
+- [x] Homepage
 - [x] Upcoming Matches
 - [x] Leaderboard	
 - [x] News
 - [ ] About
-- [ ] Sign Up
-- [ ] Favourite
-- [ ] Stats
+- [x] Sign Up
+- [x] Favourite
+- [x] Stats
 - [ ] Quiz
 
 ### Authors
