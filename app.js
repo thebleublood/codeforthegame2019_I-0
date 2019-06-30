@@ -12,7 +12,17 @@ var passportLocalMongoose = require("passport-local-mongoose");
 
 var favteam= null;
 
-mongoose.connect("mongodb://localhost/cricmaniac");
+mongoose.connect('mongodb+srv://aman:letmein01@cricmaniac-ereth.mongodb.net/test?retryWrites=true&w=majority',
+{
+    useNewUrlParser: true,
+    useCreateIndex: true
+}).then(()=>{
+    console.log('connected to db');
+}).catch(err =>{
+    console.log('ERROR: err.message');
+});
+
+
 var db = mongoose.connection;
 var app     = express();
 
