@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>CricManiac | ICC WorldCup 2019</title>
+      <link  rel="stylesheet"  href="/home.css">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/matches.css">
+    <link rel="stylesheet" href="/love.css">
+    
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri:600&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+
+      
+    <div class="contain">
+        <div class="icon-wrapper">
+            <svg id="cricket-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+              <title>Cricket</title>
+                  <path id="bat" class="cls-1" d="M86.68,22.9l-9.59-9.58a6.52,6.52,0,0,0-4.62-2,7.35,7.35,0,0,0-5,1.81L31.17,49.5a6.57,6.57,0,0,0,0,9.42l1,1L15.47,76.59l-5.29,5.29a1.6,1.6,0,0,0,0,2.31l5.29,5.29a1.6,1.6,0,0,0,2.31,0l5.29-5.29L39.76,67.51l1,1a6.52,6.52,0,0,0,4.62,2,6,6,0,0,0,4.63-2L78.09,40.74,82.88,36l3.8-3.8a6.39,6.39,0,0,0,0-9.25ZM16.63,86l-3-3,4-4,3,3Zm5.28-5.28-3-3L34.47,62.22l3,3ZM34.3,57.42,53,46.82,42.41,65.53Zm13.55,8.77a3.27,3.27,0,0,1-2.31,1,3.16,3.16,0,0,1-1.65-.5l10.9-19.49a1.47,1.47,0,0,0,.17-.83,1.54,1.54,0,0,0-.5-1.16,1.76,1.76,0,0,0-2-.33L33,55.78a2.8,2.8,0,0,1-.49-1.65,3.27,3.27,0,0,1,1-2.32l26.76-26.6L74.62,39.59ZM75.6,38.44,61.3,24.13,62.46,23h0l2.48-2.48h0l1.16-1.16,14.31,14.3Zm8.6-8.76-2.65,2.8L67.18,18.11l2.64-2.64a3.29,3.29,0,0,1,2.32-1,5.54,5.54,0,0,1,2.48,1L84.2,25A3.2,3.2,0,0,1,84.2,29.68Z" />
+                <g id="ball">
+                  <path class="cls-2" d="M85,72.69a5,5,0,0,0-6.42,0,4.6,4.6,0,0,0-.63.62,5,5,0,0,0,.62,7,4.91,4.91,0,0,0,3,1.16A5,5,0,0,0,85,72.69Z" />
+                  <path class="cls-3" d="M78.46,72.64c6,2.14-.59,8,3.12,8.89" />
+                </g>
+            </svg>
+          </div>
+          <h1>CricManiac</h1>
+        <div class="link">
+          <div class="text"><a href="/" style="text-decoration: none">Home</a></div>
+        </div>
+        <div class="link">
+          <div class="text"><a href="/matches" style="text-decoration: none">Matches</a></div>
+        </div>
+        <div class="link">
+          <div class="text"><a href="/leaderboard" style="text-decoration: none">LeaderBoard</a></div>
+        </div>
+        <div class="link">
+          <div class="text"><a href="/news" style="text-decoration: none">News</a></div>
+        </div>
+        <div class="link">
+          <div class="text"><a href="/about" style="text-decoration: none">About</a></div>
+        </div>
+        
+   
+      </div>
+
+      <div id="container-card">	
+	
+            
+                <div class="product-details">
+                    
+                   
+                <h1 style="margin: 0 auto;">India</h1>
+           
+                   
+                        <p style="margin: 0 auto;">
+                            Rank: 2
+                            
+                        </p>
+
+                        <div class="love">
+                                <div class="heart dark"></div>
+                                <div class="heart bright"></div>
+                        </div>
+                        
+                                
+                    
+                    
+            <!-- 		Control -->
+            <div class="control">
+                
+     
+                
+            </div>
+                        
+            </div>
+                
+            
+                
+            <div class="product-image">
+                
+                <img src="/flags/IND.png">
+                
+            <!-- 	product Information-->
+            <div class="info">
+                <ul>
+                    <li> Rank: 2</li>
+                    <li> Matches: 6</li>
+                    <li> Wins: 5</li>
+                    <li>Losses: 0</li>
+                    <li>NRR: 1.16</li>
+                    <li>Points: 14</li>
+                </ul>
+            </div>
+            </div>
+            <!--  End product image  -->
+            
+            
+            </div>
+     
+
+      <!-- matches -->
+      <span style="margin-left: 555px; padding: 10px;">
+          Matches
+      </span>
+     <div class="fixedforever-love" >
+            <% dataa.matchList.matches.forEach(match => { %>   
+              <%  if(match.series.id=='2181' ) { %>
+                <% if(match.homeTeam.shortName== 'IND' || match.awayTeam.shortName == 'IND'){ %>
+              <div class="card-match grid-container">
+                <% if(match.currentMatchState!="UPCOMING" && match.currentMatchState!="LIVE"){ %>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSqt-cPOEFc0sPqhVpskpAQtfvlJBTgFwDd2D9Og-_l8oC6I-ukw" alt="Avatar" style="width:120px; height:160px;" >
+                <% } %>
+                <% if(match.currentMatchState=="UPCOMING" || match.currentMatchState=="LIVE"){ %>
+                
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSqt-cPOEFc0sPqhVpskpAQtfvlJBTgFwDd2D9Og-_l8oC6I-ukw" alt="Avatar" style="width:120px; height:126px;" >
+
+                <% } %>
+                <div class="container">
+                
+                  <h4 class="matchTitle">
+                      <b><span>
+                    
+                    <img src="<%=match.homeTeam.logoUrl%>"" style="width:50px; height:30px; border-radius:25%; margin: 0 30px; ">
+                </span>
+                    <%=  match.homeTeam.shortName %> vs <%=  match.awayTeam.shortName %>
+                </b>
+                <img src="<%=match.awayTeam.logoUrl%>" style="width:50px; height:30px;border-radius: 25%; margin: 0 30px; ">
+
+                    <%  if(match.currentMatchState!="UPCOMING"){  %>
+                      <% if(match.currentMatchState=='Live'){ %>
+                            <form action ="/live" method="GET" style="display: inline; ">
+                              <input type = "text" value="<%=match.id%>" name="search" style="visibility:hidden; height:0px; width: 0px;">
+                              <input type = "text" value="<%=match.homeTeam.shortName%>" name="team1" style="visibility:hidden; height:0px; width: 0px;">
+                              <input type = "text" value="<%=match.awayTeam.shortName%>" name="team2" style="visibility:hidden; height:0px; width: 0px;">
+         
+                              <input type="submit" value="Go Live!" class="hover-button" style="background-color: red; margin-left: 90px;">
+    
+                            </form>
+                        <%  } else{  %>
+                          <form action ="/live" method="GET" value="<%=match.id%>" style="display: inline;">
+                            <input type = "text" value="<%=match.id%>" name="search" style="visibility:hidden; height:0px; width: 0px;">
+    
+                            <input type="submit" value="View Stats" class="hover-button" style="margin-left: 90px;">
+    
+                          </form>
+                        
+                          <%  }  %>
+    
+                    <%  }  %>
+                  </span></h4> 
+                  
+                  <p style="text-align: center">
+                   
+                   
+                          <%= match.currentMatchState %>     
+                       
+                   
+                  </p> 
+                </div>
+               </div>
+               <%  } %>
+               <%  }  %>
+               <% }); %>
+        </div>
+
+    
+        <% datanews.articles.forEach(news => { %>   
+              
+          <span class="fixedforever">
+         
+  
+                  <span id="wrapper">
+                      <div class="card">
+                          <div class="card-header" style="width: 371px;
+                              height: 235px;
+                              background: url(<%=news['urlToImage']%>) no-repeat;
+                              background-size: 371px 235px;
+                              border-radius: 1px 1px 0 0;
+                              -webkit-transition: all .3s ease-in-out;
+                              -moz-transition: all .3s ease-in-out;
+                              -ms-transition: all .3s ease-in-out;
+                              -o-transition: all .3s ease-in-out;
+                              transition: all .3s ease-in-out;
+                            ">
+                              <div class="card-header-mask">
+                                  <div class="card-header-date">
+                                      <div class="card-header-date-day"><%=news["publishedAt"][8]%><%=news["publishedAt"][9]%></div>
+                                      <div class="card-header-date-month"><% if(news["publishedAt"][6]==6){ %>
+                                          June
+                                     <% } else{ %>
+                                          July
+                                     <% }%>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="card-body">
+                              <div class="card-body-header">
+                                  <div class="card-body-header-category">Photos</div>
+                                  <h1 class="newsTitle"><%=news["title"]%></h1>
+                                  <p class="card-body-header-sentence">
+                                      ICC Cricket World Cup 2019
+                                  </p>
+                              </div>
+                              <p class="card-body-description">
+                                     <%=news["content"]%>
+              
+                              </p>
+                              <div class="card-body-footer">
+                                  <i class="icon icon-time"></i> <a href="<%=news["url"]%>"style="text-decoration:none;">read more...</a>
+                                  <i class="icon icon-comment"> 
+                                     Time:<%=news["publishedAt"][11]%><%=news["publishedAt"][12]%><%=news["publishedAt"][13]%><%=news["publishedAt"][14]%><%=news["publishedAt"][15]%>
+                                  
+                                  </i> 
+                              </div>
+                          </div>
+                      </div>
+                  </span>
+              
+              </span>
+          <% }); %>
+            
+           
+        
+ 
+
+
+      
+
+      
+    
+  
+      
+  
+    <script >
+        var links = document.getElementsByClassName('link')
+        for(var i = 0; i <= links.length; i++)
+          addClass(i)
+
+
+        function addClass(id){
+          setTimeout(function(){
+              if(id > 0) links[id-1].classList.remove('hover')
+              links[id].classList.add('hover')
+          }, id*750) 
+        }
+    </script>
+
+  
+  </body>
+</html>

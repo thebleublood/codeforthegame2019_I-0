@@ -4,6 +4,7 @@ html, body{
     font-family: 'Raleway', sans-serif;
     color:#FFF;
     height:100%;
+    
  }
  body{
     background:rgba(0, 0, 0, 0.5); 
@@ -14,6 +15,7 @@ html, body{
     background: linear-gradient(to left, rgb(255,24,79) 0, rgb(30, 35, 131)100%);
     background-repeat: no-repeat;
     background-attachment: fixed;
+ 
  }
  
  .contain{
@@ -51,22 +53,26 @@ html, body{
     left:-100%;
     transition-delay: all 0.5s;
     transition: all 0.5s;
+    cursor:pointer;
  }
  .link:hover:after,
  .link.hover:after{
     left:100%;
+    cursor:pointer;
  }
  .link .text{
     text-shadow:0px -40px 0px rgba(255, 255, 255, 1);
     transition:all 0.75s;
     transform:translateY(100%) translateZ(0);
     transition-delay:all 0.25s;
+    cursor:pointer;
  }
  .link:hover .text,
  .link.hover .text{
     text-shadow:0px -40px 0px rgba(255, 255, 255, 0);
     transform:translateY(0%) translateZ(0) scale(1.1);
     font-weight:600;
+    cursor:pointer;
  }
  .icon-wrapper {
    width: 50px;
@@ -113,3 +119,389 @@ html, body{
    transform: translate(33px,50px);
  }
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .center {
+
+  position: relative;
+  margin: auto;
+  z-index: 0;
+}
+
+.content_container {
+  margin: auto 26px;
+  height: 100%;
+  width: calc(100% - 54px);
+}
+
+.back_img,
+.title_img {
+  position: fixed;
+  margin-top: 0px;
+  margin-left: 0px;
+  z-index: -1;
+}
+
+
+#login_img,
+#signup_img {
+  transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+#Path03,
+#Path {
+  transition: all 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+#Path04,
+#Path01 {
+  transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+#back_btn {
+  margin-left: 26px;
+  margin-top: 57px;
+  position: fixed;
+  transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+  opacity: 0;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.title_text {
+  font-weight: 600;
+  font-size: 34px;
+  color: #303436;
+  letter-spacing: 0.85px;
+  line-height: 52px;
+  text-align: left;
+  margin-top: 140px;
+  margin-bottom: 15px;
+}
+
+.title_welcome {
+  font-weight: 600;
+  font-size: 34px;
+  color: #303436;
+  letter-spacing: 0.85px;
+  line-height: 52px;
+  text-align: left;
+  margin-top: 140px;
+  margin-bottom: 15px;
+}
+
+.input_line {
+  margin-bottom: 25px;
+  height: 56px;
+  border: #303436;
+}
+.input_line label {
+
+  position: absolute;
+  font-weight: 500;
+  font-size: 17px;
+  color: #979797;
+  letter-spacing: 0.2px;
+  text-align: left;
+  margin-top: -30px;
+  transition: 0.2s ease-in-out;
+  z-index: 0;
+  user-select: none;
+}
+.input_line label.active {
+  font-weight: 500;
+  font-size: 12px;
+  position: absolute;
+  color: white;
+  letter-spacing: 0.14px;
+  text-align: left;
+}
+.input_content:valid+label {
+  font-weight: 500;
+  font-size: 12px;
+  position: absolute;
+  color: #979797;
+  letter-spacing: 0.14px;
+  text-align: left;
+  margin-top: -48px;
+  transition: 0.2s ease-in-out;
+}
+
+.input_line:focus-within label,
+.input_content:focus+label {
+
+  font-weight: 500;
+  font-size: 12px;
+  position: absolute;
+  color: #FE9F08;
+  letter-spacing: 0.14px;
+  text-align: left;
+  margin-top: -48px;
+  transition: 0.2s ease-in-out;
+
+}
+.input_line label.inactive {
+  font-weight: 500;
+  font-size: 17px;
+  position: absolute;
+  color: white;
+  letter-spacing: 0.2px;
+
+  text-align: left;
+  margin-top: 16px;
+}
+.input_content {
+  margin-top: 21px;
+  font-weight: 500;
+  font-size: 17px;
+  color: white;
+  letter-spacing: 0.2px;
+  text-align: left;
+  border: none;
+  height: 32px;
+  width: 100%;
+  opacity: 1;
+  background: transparent;
+  border-bottom: solid rgba(216, 216, 216, 0.5) 2px;
+  transition: 0.2s ease-in-out;
+  z-index: 3;
+}
+.input_content:focus {
+  margin-top: 21px;
+  caret-color: #F4BE0E;
+  font-weight: 500;
+  font-size: 17px;
+  color: #525252;
+  letter-spacing: 0.2px;
+  text-align: left;
+  border: none;
+  height: 32px;
+  width: 100%;
+  opacity: 1;
+  border-bottom: solid #F4BE0E 2px;
+  transition: 0.2s ease-in-out;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+.sign_up {
+  width: 100%;
+  margin-top: 40px;
+  border-radius: 10px;
+
+  box-shadow: rgba(166, 196, 209, 0.8) 0 2px 4px;
+  text-align: center;
+  line-height: 50px;
+
+  background-color: #303436;
+  font-weight: 500;
+  font-size: 17px;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+  text-align: center;
+  border: none;
+  transition: 0.2s ease-in-out;
+}
+
+.sign_up:active {
+  width: 100%;
+  margin-top: 40px;
+  border-radius: 10px;
+
+  box-shadow: rgba(166, 196, 209, 0.8) 0 0 0;
+  text-align: center;
+  line-height: 50px;
+
+  background-color: #303436;
+  font-weight: 500;
+  font-size: 17px;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+  text-align: center;
+  border: none;
+  transition: 0.2s ease-in-out;
+}
+
+.sign_google {
+  width: 100%;
+  /* margin-top: 40px; */
+  border-radius: 10px;
+
+  box-shadow: rgba(170, 83, 16, 0.2) 0 2px 4px;
+  text-align: center;
+  line-height: 50px;
+  border: solid #FFC100 1px;
+  background-color: rgba(251, 217, 115, 0.16);
+  font-weight: 500;
+  font-size: 17px;
+  color: #FE9F08;
+  letter-spacing: 0.2px;
+  text-align: center;
+  transition: 0.2s ease-in-out;
+}
+
+.sign_google:active {
+  width: 100%;
+  /* margin-top: 40px; */
+  border-radius: 10px;
+
+  box-shadow: rgba(170, 83, 16, 0.2) 0 0px 0px;
+  text-align: center;
+  line-height: 50px;
+  border: solid #FFC100 1px;
+  background-color: rgba(251, 217, 115, 0.16);
+  font-weight: 500;
+  font-size: 17px;
+  color: #FE9F08;
+  letter-spacing: 0.2px;
+  text-align: center;
+  transition: 0.2s ease-in-out;
+}
+
+.footer_line {
+  margin-top: 35px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.footer_text {
+  font-weight: 400;
+  font-size: 14px;
+  color: #a8a8a8;
+  text-align: center;
+}
+
+.footer_link {
+  margin-left: 7px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #fe9f08;
+  letter-spacing: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.back_btn,
+button {
+  cursor: pointer;
+}
+
+.divider {
+  margin: 8px 0px;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  height: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #a8a8a8;
+  text-align: center;
+
+}
+
+hr {
+  position: relative;
+  width: 44%;
+  display: block;
+  unicode-bidi: isolate;
+
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  overflow: hidden;
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 0.5em;
+
+  border-style: inset;
+  border-width: 1px;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+  border-color: rgba(151, 151, 151, 0.25)
+}
+
+.g_logo {
+  position: absolute;
+  z-index: 9;
+  margin-top: 15px;
+  left: 38px;
+
+}
+
+.forget {
+  margin-top: -17px;
+  margin-bottom: 27px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #a8a8a8;
+  float: right;
+}
+.iphone_x{
+width:375px;
+height:inherit;
+overflow-x: hidden;
+overflow-y: hidden;
+/* background-image: url(../img/iPhone1x.png); */
+back
+background-size: cover;
+transition: 0.2s ease-in-out;
+
+}
+.shadow{
+  box-shadow: rgba(27, 27, 27, 0.15) 0px 2px 25px;
+  border-radius: 20px;
+}
+
+.btn{
+  height:50px;
+}
+.iphone_2page{
+  width:750px;
+  height:812px;
+  display: flex;
+  left:0px;
+   transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+    /* transition-delay: 0.2s; */
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .big_container {
+
+      transform: scale(0.8);
+
+  }
+}
+@media only screen and (min-width: 600px) {
+  .big_container {
+
+      transform: scale(1);
+
+  }
+}
+
+
+#homewall1 {
+  height: 1000px;
+  width: 2000px;
+  background: url("https://media.gettyimages.com/photos/cricket-player-batsman-on-the-stadium-picture-id639604868?s=2048x2048")
+}

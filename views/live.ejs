@@ -47,9 +47,15 @@
         <%=data.fullScorecard.innings[0].team.shortName%>
          
         vs
-        
+
+        <% if(data.fullScorecard.innings[1]!= undefined) { %>
         <%=data.fullScorecard.innings[1].team.shortName%>
-     </span>
+        <% }else if(data.fullScorecard.innings[0].team.shortName!=t1){ %>
+         <%=    t1 %>
+         <% } else{  %>
+        <%=   t2 %>
+       <%  } %>
+    </span>
         <span class="headscore1">
                 <img src="flags/<%=data.fullScorecard.innings[0].team.shortName%>.png" style="width:100px; height: 100px; border-radius:10px; padding-top: 30px;">
                <span style="justify-content: left; font-size: 90px;">
@@ -64,9 +70,11 @@
             
         
         <span class="headscore2">
+        <% if(data.fullScorecard.innings[1]!= undefined) { %>
 
             <span style="justify-content: left; font-size: 90px;">
-                        <%=data.fullScorecard.innings[1].run%>/<%=data.fullScorecard.innings[1].wicket%>
+                        
+                <%=data.fullScorecard.innings[1].run%>/<%=data.fullScorecard.innings[1].wicket%>
 
                 </span>
 
@@ -77,6 +85,27 @@
 
                 <img src="flags/<%=data.fullScorecard.innings[1].team.shortName%>.png" style="width:100px; height: 100px; border-radius:10px;padding-top: 30px;">
 
+            <% } else { %>
+
+                <span style="justify-content: left; font-size: 90px;">
+                        
+                        0/0
+        
+                        </span>
+        
+                    
+                        <span>
+                            (0)
+                        </span>
+                       
+        <% if(data.fullScorecard.innings[0].team.shortName!=t1){ %>
+                        <img src="flags/<%=t1%>.png"
+                        style="width:100px; height: 100px; border-radius:10px;padding-top: 30px;">
+             <%   } else{ %>
+                <img src="flags/<%=t2%>.png"
+                style="width:100px; height: 100px; border-radius:10px;padding-top: 30px;">
+                <% } %>
+                <% } %>
 
             </span>
                 
@@ -163,7 +192,9 @@
                                     S/R
                                 </div>
                             </div>
-    
+
+        <% if(data.fullScorecard.innings[1]!= undefined) { %>
+
                  <% data.fullScorecard.innings[1].batsmen.forEach(player => { %>
                             <div class="row">
                                 <div class="cell" data-title="Name">
@@ -190,7 +221,35 @@
     
                   <% }) %>
             
-                            
+        <% } else{%>
+            
+            <% data.fullScorecard.innings[0].batsmen.forEach(player => { %>
+                <div class="row">
+                    <div class="cell" data-title="Name">
+                          <img src="http://www.coverbash.com/wp-content/themes/covers/images/blank_profile_pic.jpg"
+                          style="width: 25px; height:25px; border-radius:50%"
+                          >  Yet to Bat 
+                    </div>
+                    <div class="cell" data-title="Runs">
+                            -
+                    </div>
+                    <div class="cell" data-title="Balls">
+                            -  
+                    </div>
+                    <div class="cell" data-title="Fours">
+                            -  
+                    </div>
+                    <div class="cell" data-title="Sixes">
+                            -  
+                    </div>
+                    <div class="cell" data-title="Strike-Rate">
+                            -  
+                    </div>
+                </div>
+
+      <% }) %>
+
+            <% } %>
     
                         </div>
                 </div>
@@ -282,7 +341,10 @@
                                     Econ
                                 </div>
                             </div>
-    
+
+        <% if(data.fullScorecard.innings[1]!= undefined) { %>
+
+
                  <% data.fullScorecard.innings[1].bowlers.forEach(player => { %>
                             <div class="row">
                                 <div class="cell" data-title="Name">
@@ -309,8 +371,36 @@
     
                   <% }) %>
             
-                            
-    
+        <% } else{%>
+            
+            <% data.fullScorecard.innings[0].bowlers.forEach(player => { %>
+                <div class="row">
+                    <div class="cell" data-title="Name">
+                          <img src="http://www.coverbash.com/wp-content/themes/covers/images/blank_profile_pic.jpg"
+                          style="width: 25px; height:25px; border-radius:50%"
+                          >  Yet to Bowl 
+                    </div>
+                    <div class="cell" data-title="Overs">
+                            - 
+                    </div>
+                    <div class="cell" data-title="Maidens">
+                            -  
+                    </div>
+                    <div class="cell" data-title="Runs Conceaded">
+                            -  
+                    </div>
+                    <div class="cell" data-title="Wickets">
+                            -  
+                    </div>
+                    <div class="cell" data-title="Economy">
+                            -  
+                    </div>
+                </div>
+
+      <% }) %>
+
+            
+            <% } %>
                         </div>
                 </div>
             </span>
