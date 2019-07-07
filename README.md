@@ -36,6 +36,13 @@ and many more to come.
 
 Live Demo: http://cricmaniac.herokuapp.com
 
+##Note
+
+- If Heroku server shows Application Error (might due to the connection      timeout to Mongodb Atlas )kindly run it locally from the below code.
+- Some API's are having poor fetch time, please bear with that. Refresh     or try after sometime, until we find better alternative.
+- The CricManiac WebApp is focused on PC based resolution, so it might
+  not align properly in all devices
+
 ## To run locally
 - Download node.js framework from
     ``` https://nodejs.org/dist/v10.16.0/node-v10.16.0-x64.msi ```
