@@ -36,7 +36,7 @@ and many more to come.
 
 Live Demo: http://cricmaniac.herokuapp.com
 
-##Note
+## Note
 
 - If Heroku server shows Application Error (might due to the connection      timeout to Mongodb Atlas )kindly run it locally from the below code.
 - Some API's are having poor fetch time, please bear with that. Refresh     or try after sometime, until we find better alternative.
