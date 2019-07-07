@@ -6,6 +6,8 @@
    <title>CricManiac</title>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <link href="https://fonts.googleapis.com/css?family=Parisienne&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="/home.css">
     <link rel="stylesheet" href="/live.css">
   
@@ -26,6 +28,15 @@
         </svg>
       </div>
       <h1>CricManiac</h1>
+      <% if(currentUser){ %>
+        <div style="font-family: 'Parisienne', cursive;
+        font-size: x-large;
+        font-weight: 500;
+        text-align: -webkit-center;
+        margin: 30px 0;">
+          Hello <%= currentUser.username %>
+        </div>
+       <% } %>
       <div class="link">
         <div class="text"><a href="/" style="text-decoration: none">Home</a></div>
       </div>
@@ -35,8 +46,16 @@
       <div class="link">
         <div class="text"><a href="/leaderBoard" style="text-decoration: none">LeaderBoard</a></div>
       </div>
+      <% if(currentUser){ %>
+        <div class="link">
+          <div class="text"><a href="/love" style="text-decoration: none">Favourite</a></div>
+        </div>
+        <% } %>
       <div class="link">
         <div class="text"><a href="/news" style="text-decoration: none">News</a></div>
+      </div>
+      <div class="link">
+        <div class="text"><a href="/quiz" style="text-decoration: none">Quiz</a></div>
       </div>
       <div class="link">
         <div class="text"><a href="/about" style="text-decoration: none">About</a></div>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>CricQuiz</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Parisienne&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+      <link rel="stylesheet" href="/quiz.css">
+      <link rel="stylesheet" href="/home.css">
+
+  
+</head>
+
+<body>
+	<div class="contain">
+		<div class="icon-wrapper">
+			<svg id="cricket-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+			  <title>Cricket</title>
+				  <path id="bat" class="cls-1" d="M86.68,22.9l-9.59-9.58a6.52,6.52,0,0,0-4.62-2,7.35,7.35,0,0,0-5,1.81L31.17,49.5a6.57,6.57,0,0,0,0,9.42l1,1L15.47,76.59l-5.29,5.29a1.6,1.6,0,0,0,0,2.31l5.29,5.29a1.6,1.6,0,0,0,2.31,0l5.29-5.29L39.76,67.51l1,1a6.52,6.52,0,0,0,4.62,2,6,6,0,0,0,4.63-2L78.09,40.74,82.88,36l3.8-3.8a6.39,6.39,0,0,0,0-9.25ZM16.63,86l-3-3,4-4,3,3Zm5.28-5.28-3-3L34.47,62.22l3,3ZM34.3,57.42,53,46.82,42.41,65.53Zm13.55,8.77a3.27,3.27,0,0,1-2.31,1,3.16,3.16,0,0,1-1.65-.5l10.9-19.49a1.47,1.47,0,0,0,.17-.83,1.54,1.54,0,0,0-.5-1.16,1.76,1.76,0,0,0-2-.33L33,55.78a2.8,2.8,0,0,1-.49-1.65,3.27,3.27,0,0,1,1-2.32l26.76-26.6L74.62,39.59ZM75.6,38.44,61.3,24.13,62.46,23h0l2.48-2.48h0l1.16-1.16,14.31,14.3Zm8.6-8.76-2.65,2.8L67.18,18.11l2.64-2.64a3.29,3.29,0,0,1,2.32-1,5.54,5.54,0,0,1,2.48,1L84.2,25A3.2,3.2,0,0,1,84.2,29.68Z" />
+				<g id="ball">
+				  <path class="cls-2" d="M85,72.69a5,5,0,0,0-6.42,0,4.6,4.6,0,0,0-.63.62,5,5,0,0,0,.62,7,4.91,4.91,0,0,0,3,1.16A5,5,0,0,0,85,72.69Z" />
+				  <path class="cls-3" d="M78.46,72.64c6,2.14-.59,8,3.12,8.89" />
+				</g>
+			</svg>
+		  </div>
+		  <h1>CricManiac</h1>
+		  <% if(currentUser){ %>
+			<div style="font-family: 'Parisienne', cursive;
+			font-size: x-large;
+			font-weight: 500;
+			text-align: -webkit-center;
+			margin: 30px 0;">
+			  Hello <%= currentUser.username %>
+			</div>
+		   <% } %>
+		  <div class="link">
+			<div class="text"><a href="/" style="text-decoration: none">Home</a></div>
+		  </div>
+		  <div class="link">
+			<div class="text"><a href="/matches" style="text-decoration: none">Matches</a></div>
+		  </div>
+		  <div class="link">
+			<div class="text"><a href="/leaderBoard" style="text-decoration: none">LeaderBoard</a></div>
+		  </div>
+		  <% if(currentUser){ %>
+			<div class="link">
+			  <div class="text"><a href="/love" style="text-decoration: none">Favourite</a></div>
+			</div>
+			<% } %>
+		  <div class="link">
+			<div class="text"><a href="/news" style="text-decoration: none">News</a></div>
+		  </div>
+		  <div class="link">
+        <div class="text"><a href="/quiz" style="text-decoration: none">Quiz</a></div>
+      </div>
+		  <div class="link">
+			<div class="text"><a href="/about" style="text-decoration: none">About</a></div>
+		  </div>
+	 
+	</div>
+	
+  <!--container-->
+<section class="container">
+
+	<!--questionBox-->
+	<div class="questionBox" id="app">
+
+		<!-- transition -->
+		<transition :duration="{ enter: 500, leave: 300 }" enter-active-class="animated zoomIn" leave-active-class="animated zoomOut" mode="out-in">
+
+			<!--qusetionContainer-->
+			<div class="questionContainer" v-if="questionIndex<quiz.questions.length" v-bind:key="questionIndex">
+
+				<header>
+					<h1 class="title is-6">CricQuiz</h1>
+					<!--progress-->
+					<div class="progressContainer">
+						<progress class="progress is-info is-small" :value="(questionIndex/quiz.questions.length)*100" max="100">{{(questionIndex/quiz.questions.length)*100}}%</progress>
+						<p>{{(questionIndex/quiz.questions.length)*100}}% complete</p>
+					</div>
+					<!--/progress-->
+				</header>
+
+				<!-- questionTitle -->
+				<h2 class="titleContainer title">{{ quiz.questions[questionIndex].text }}</h2>
+				<!-- questionImage -->
+				<!-- <img src={{ quiz.questions[questionIndex].image }}> -->
+				<!-- <div style="width: 100%; height: 200px; background: url(http://p.imgci.com/db/PICTURES/CMS/266000/266018.3.jpg)">
+					
+				</div> -->
+				<!-- quizOptions -->
+				<div class="optionContainer">
+					<div class="option" v-for="(response, index) in quiz.questions[questionIndex].responses" @click="selectOption(index)" :class="{ 'is-selected': userResponses[questionIndex] == index}" :key="index">
+						{{ index | charIndex }}. {{ response.text }}
+					</div>
+				</div>
+
+				<!--quizFooter: navigation and progress-->
+				<footer class="questionFooter">
+
+					<!--pagination-->
+					<nav class="pagination" role="navigation" aria-label="pagination">
+
+						<!-- back button -->
+						<a class="button" v-on:click="prev();" :disabled="questionIndex < 1">
+                    Back
+                  </a>
+
+						<!-- next button -->
+						<a class="button" :class="(userResponses[questionIndex]==null)?'':'is-active'" v-on:click="next();" :disabled="questionIndex>=quiz.questions.length">
+                    {{ (userResponses[questionIndex]==null)?'Skip':'Next' }}
+                  </a>
+
+					</nav>
+					<!--/pagination-->
+
+				</footer>
+				<!--/quizFooter-->
+
+			</div>
+			<!--/questionContainer-->
+
+			<!--quizCompletedResult-->
+			<div v-if="questionIndex >= quiz.questions.length" v-bind:key="questionIndex" class="quizCompleted has-text-centered">
+
+				<!-- quizCompletedIcon: Achievement Icon -->
+				<span class="icon">
+                <i class="fa" :class="score()>3?'fa-check-circle-o is-active':'fa-times-circle'"></i>
+              </span>
+
+				<!--resultTitleBlock-->
+				<h2 class="title">
+					You did {{ (score()>7?'an amazing':(score()<4?'a poor':'a good')) }} job!
+				</h2>
+				<p class="subtitle">
+					Total score: {{ score() }} / {{ quiz.questions.length }}
+				</p>
+					<br>
+					<a class="button" @click="restart()">restart <i class="fa fa-refresh"></i></a>
+				<!--/resultTitleBlock-->
+
+			</div>
+			<!--/quizCompetedResult-->
+
+		</transition>
+
+	</div>
+	<!--/questionBox-->
+
+</section>
+<!--/container-->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+
+  
+
+    <script  src="/quiz.js"></script>
+
+
+
+
+</body>
+
+</html>

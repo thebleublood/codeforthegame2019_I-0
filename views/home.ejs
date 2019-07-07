@@ -6,6 +6,8 @@
    <title>CricManiac</title>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <link href="https://fonts.googleapis.com/css?family=Parisienne&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="/home.css">
     <style>
     
@@ -37,6 +39,15 @@
         </svg>
       </div>
       <h1>CricManiac</h1>
+      <% if(currentUser){ %>
+        <div style="font-family: 'Parisienne', cursive;
+        font-size: x-large;
+        font-weight: 500;
+        text-align: -webkit-center;
+        margin: 30px 0;">
+          Hello <%= currentUser.username %>
+        </div>
+       <% } %>
       <div class="link">
         <div class="text"><a href="/" style="text-decoration: none">Home</a></div>
       </div>
@@ -46,8 +57,16 @@
       <div class="link">
         <div class="text"><a href="/leaderBoard" style="text-decoration: none">LeaderBoard</a></div>
       </div>
+      <% if(currentUser){ %>
+        <div class="link">
+          <div class="text"><a href="/love" style="text-decoration: none">Favourite</a></div>
+        </div>
+        <% } %>
       <div class="link">
         <div class="text"><a href="/news" style="text-decoration: none">News</a></div>
+      </div> 
+      <div class="link">
+        <div class="text"><a href="/quiz" style="text-decoration: none">Quiz</a></div>
       </div>
       <div class="link">
         <div class="text"><a href="/about" style="text-decoration: none">About</a></div>
@@ -217,7 +236,7 @@
                                     <label for="email">Username</label>
                                 </div>
 
-                                <div class="input_line">
+                                <!-- <div class="input_line">
                                     <select name="fav" class="input_content" >
                                         <option value="India">India</option>
                                         <option value="India">Australia</option>
@@ -231,7 +250,7 @@
                                         <option value="India">Pakistan</option>
                                     </select>
                                     <label for="pass">Favourite Team</label>
-                                 </div>
+                                 </div> -->
 
                                 <div class="input_line">
 
@@ -248,6 +267,7 @@
                               
                      </form>
 
+                      
 
 <!--             
               <div class="divider">
@@ -272,7 +292,7 @@
               <div class="title_text">Let's get started</div>
               <div class="input_line">
 
-                  <input class="input_content" id="user" name="username" type="text" required value="Hermione" />
+                  <input class="input_content" id="user" name="username" type="text" required value="Anonymous" />
                   <label for="user">Username</label>
               </div>
               <div class="input_line">
@@ -288,16 +308,16 @@
 
               <div class="input_line">
                 <select name="fav" class="input_content" >
-                    <option value="India">India</option>
-                    <option value="India">Australia</option>
-                    <option value="India">Bangladesh</option>
-                    <option value="India">England</option>
-                    <option value="India">New Zealand</option>
-                    <option value="India">Sri Lanka</option>
-                    <option value="India">South Africa</option>
-                    <option value="India">Afghanistan</option>
-                    <option value="India">West Indies</option>
-                    <option value="India">Pakistan</option>
+                    <option value="IND">India</option>
+                    <option value="AUS">Australia</option>
+                    <option value="BAN">Bangladesh</option>
+                    <option value="ENG">England</option>
+                    <option value="NZ">New Zealand</option>
+                    <option value="SL">Sri Lanka</option>
+                    <option value="SA">South Africa</option>
+                    <option value="AFG">Afghanistan</option>
+                    <option value="WI">West Indies</option>
+                    <option value="PAK">Pakistan</option>
                 </select>
                 <label for="pass">Favourite Team</label>
              </div>

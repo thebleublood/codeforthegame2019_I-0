@@ -383,17 +383,17 @@ button:focus {
 }
 
 .footer_text {
-  font-weight: 400;
-  font-size: 14px;
-  color: #a8a8a8;
+  font-weight: 800;
+  font-size: 80x;
+  color: #17223b;
   text-align: center;
 }
 
 .footer_link {
   margin-left: 7px;
-  font-weight: 400;
-  font-size: 14px;
-  color: #fe9f08;
+  font-weight: 800;
+  font-size: 16px;
+  color: #f7ff56;
   letter-spacing: 0;
   text-align: center;
   cursor: pointer;

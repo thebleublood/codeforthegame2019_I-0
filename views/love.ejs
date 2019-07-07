@@ -7,9 +7,13 @@
 
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <link href="https://fonts.googleapis.com/css?family=Parisienne&display=swap" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/matches.css">
     <link rel="stylesheet" href="/love.css">
+    <link rel="stylesheet" href="/home.css">
+
     
 
 
@@ -32,6 +36,15 @@
             </svg>
           </div>
           <h1>CricManiac</h1>
+          <% if(currentUser){ %>
+            <div style="font-family: 'Parisienne', cursive;
+            font-size: x-large;
+            font-weight: 500;
+            text-align: -webkit-center;
+            margin: 30px 0;">
+              Hello <%= currentUser.username %>
+            </div>
+           <% } %>
         <div class="link">
           <div class="text"><a href="/" style="text-decoration: none">Home</a></div>
         </div>
@@ -41,8 +54,16 @@
         <div class="link">
           <div class="text"><a href="/leaderboard" style="text-decoration: none">LeaderBoard</a></div>
         </div>
+        <% if(currentUser){ %>
+          <div class="link">
+            <div class="text"><a href="/love" style="text-decoration: none">Favourite</a></div>
+          </div>
+          <% } %>
         <div class="link">
           <div class="text"><a href="/news" style="text-decoration: none">News</a></div>
+        </div>
+        <div class="link">
+          <div class="text"><a href="/quiz" style="text-decoration: none">Quiz</a></div>
         </div>
         <div class="link">
           <div class="text"><a href="/about" style="text-decoration: none">About</a></div>
@@ -52,16 +73,17 @@
       </div>
 
       <div id="container-card">	
-	
+        
             
                 <div class="product-details">
-                    
+                  <% standingsdata.teams.forEach(team => { %>  
+                    <% if(team.shortName== fav){ %> 
                    
-                <h1 style="margin: 0 auto;">India</h1>
-           
+                <h1 style="margin: 0 auto;"><%=team.name%></h1>
+                
                    
                         <p style="margin: 0 auto;">
-                            Rank: 2
+                            Rank: <%= team.position %>
                             
                         </p>
 
@@ -86,25 +108,52 @@
                 
             <div class="product-image">
                 
-                <img src="/flags/IND.png">
+                <img src="/flags/<%=fav%>.png">
                 
             <!-- 	product Information-->
+            
             <div class="info">
                 <ul>
-                    <li> Rank: 2</li>
-                    <li> Matches: 6</li>
-                    <li> Wins: 5</li>
-                    <li>Losses: 0</li>
-                    <li>NRR: 1.16</li>
-                    <li>Points: 14</li>
+                    <li> Rank: <%= team.position %></li>
+                    <li> Matches: <%= team.played %></li>
+                    <li> Wins: <%= team.won %></li>
+                    <li>Losses: <%= team.lost %></li>
+                    <li>NRR: <%= team.netRunRate %></li>
+                    <li>Points: <%= team.points %></li>
                 </ul>
             </div>
+            <%  }  %>
+          <%   }); %>
             </div>
             <!--  End product image  -->
             
             
             </div>
-     
+            <form action="/fav?_method=PUT" method="POST" style="
+              margin-top: -50px;
+              margin-bottom: 50px;">
+              <div class="inputs_line" style="margin-bottom: 10px; width: 30%; align-content: center; margin: auto;">
+                <select name="fav" class="input_content" >
+                    <option value="IND">India</option>
+                    <option value="AUS">Australia</option>
+                    <option value="BAN">Bangladesh</option>
+                    <option value="ENG">England</option>
+                    <option value="NZ">New Zealand</option>
+                    <option value="SL">Sri Lanka</option>
+                    <option value="SA">South Africa</option>
+                    <option value="AFG">Afghanistan</option>
+                    <option value="WI">West Indies</option>
+                    <option value="PAK">Pakistan</option>
+                </select>
+                <label for="pass">Favourite Team</label>
+    
+                <button class="btn sign_up">
+                  <span>Change</span>
+              </button>
+    
+             </div>
+            </form>
+      
 
       <!-- matches -->
       <span style="margin-left: 555px; padding: 10px;">
@@ -113,7 +162,7 @@
      <div class="fixedforever-love" >
             <% dataa.matchList.matches.forEach(match => { %>   
               <%  if(match.series.id=='2181' ) { %>
-                <% if(match.homeTeam.shortName== 'IND' || match.awayTeam.shortName == 'IND'){ %>
+                <% if(match.homeTeam.shortName== fav || match.awayTeam.shortName == fav){ %>
               <div class="card-match grid-container">
                 <% if(match.currentMatchState!="UPCOMING" && match.currentMatchState!="LIVE"){ %>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSqt-cPOEFc0sPqhVpskpAQtfvlJBTgFwDd2D9Og-_l8oC6I-ukw" alt="Avatar" style="width:120px; height:160px;" >

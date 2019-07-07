@@ -6,6 +6,8 @@
         <link rel="stylesheet" type="text/css" href="/home.css" />
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+        <link href="https://fonts.googleapis.com/css?family=Parisienne&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300" />
         <title>CricManiac|News</title>
     </head>
@@ -25,6 +27,15 @@
                             </svg>
                           </div>
                           <h1 class="logo">CricManiac</h1>
+                          <% if(currentUser){ %>
+                            <div style="font-family: 'Parisienne', cursive;
+                            font-size: x-large;
+                            font-weight: 500;
+                            text-align: -webkit-center;
+                            margin: 30px 0;">
+                              Hello <%= currentUser.username %>
+                            </div>
+                           <% } %>
 
                     <div class="link">
                       <div class="text"><a href="/" style="text-decoration: none">Home</a></div>
@@ -35,8 +46,16 @@
                     <div class="link">
                       <div class="text"><a href="/leaderboard" style="text-decoration: none">LeaderBoard</a></div>
                     </div>
+                    <% if(currentUser){ %>
+                      <div class="link">
+                        <div class="text"><a href="/love" style="text-decoration: none">Favourite</a></div>
+                      </div>
+                      <% } %>
                     <div class="link">
                       <div class="text"><a href="/news" style="text-decoration: none">News</a></div>
+                    </div>
+                    <div class="link">
+                      <div class="text"><a href="/quiz" style="text-decoration: none">Quiz</a></div>
                     </div>
                     <div class="link">
                       <div class="text"><a href="/about" style="text-decoration: none">About</a></div>
@@ -57,7 +76,14 @@
                     <div class="card">
                         <div class="card-header" style="width: 371px;
                             height: 235px;
+
+                            <% if(news['urlToImage']!=null){ %>
+
                             background: url(<%=news['urlToImage']%>) no-repeat;
+
+                             <% }else{ %>
+                              background: url(https://smedia2.intoday.in/btmt/images/stories/icc_660_053019074312.jpg) no repeat;
+                             <% } %>
                             background-size: 371px 235px;
                             border-radius: 1px 1px 0 0;
                             -webkit-transition: all .3s ease-in-out;
