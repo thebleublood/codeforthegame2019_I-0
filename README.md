@@ -66,5 +66,9 @@ Live Demo: http://cricmaniac.herokuapp.com
 - [x] Stats
 - [x] Quiz
 
+## Documentation
+
+https://github.com/thebleublood/codeforthegame2019_anonymous/blob/master/UserDocumentation.pdf
+
 ### Authors
 _Aman Kumar_
