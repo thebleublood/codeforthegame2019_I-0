@@ -53,7 +53,7 @@ Go to: http://cricmaniac.herokuapp.com
 - [x] Sign Up
 - [x] Favourite
 - [x] Stats
-- [ ] Quiz
+- [x] Quiz
 
 ### Authors
 _Aman Kumar_
